@@ -1,0 +1,67 @@
+plugins {
+    id 'java'
+    id 'jacoco'
+    id 'maven-publish'
+    id 'org.sonarqube' version '3.3'
+}
+
+group = 'com.github.sibmaks'
+version = '0.0.1'
+sourceCompatibility = '17'
+sourceCompatibility = jdk_version
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+publishing {
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = "https://maven.pkg.github.com/sibmaks/mad-error-api"
+            credentials {
+                username = project.findProperty("gpr.user") ?: System.getenv("GIT_USERNAME")
+                password = project.findProperty("gpr.key") ?: System.getenv("GIT_TOKEN")
+            }
+        }
+    }
+    publications {
+        gpr(MavenPublication) {
+            from(components.java)
+        }
+    }
+}
+
+sonarqube {
+    properties {
+        property "sonar.projectKey", "sibmaks_tiny-injector"
+        property "sonar.organization", "sibmaks"
+        property "sonar.host.url", "https://sonarcloud.io"
+        property "sonar.java.source", jdk_version
+        property "sonar.java.target", jdk_version
+    }
+}
+
+test.finalizedBy jacocoTestReport
+
+jar {
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
+dependencies {
+    compileOnly "org.projectlombok:lombok:${lib_lombok_version}"
+
+    annotationProcessor "org.projectlombok:lombok:${lib_lombok_version}"
+}
+
+test {
+    useJUnitPlatform()
+}
