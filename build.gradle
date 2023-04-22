@@ -1,8 +1,6 @@
 plugins {
     id 'java'
-    id 'jacoco'
     id 'maven-publish'
-    id 'org.sonarqube' version '3.3'
 }
 
 group = 'com.github.sibmaks'
@@ -38,18 +36,6 @@ publishing {
     }
 }
 
-sonarqube {
-    properties {
-        property "sonar.projectKey", "sibmaks_tiny-injector"
-        property "sonar.organization", "sibmaks"
-        property "sonar.host.url", "https://sonarcloud.io"
-        property "sonar.java.source", jdk_version
-        property "sonar.java.target", jdk_version
-    }
-}
-
-test.finalizedBy jacocoTestReport
-
 jar {
     from {
         configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
@@ -60,8 +46,4 @@ dependencies {
     compileOnly "org.projectlombok:lombok:${lib_lombok_version}"
 
     annotationProcessor "org.projectlombok:lombok:${lib_lombok_version}"
-}
-
-test {
-    useJUnitPlatform()
 }
