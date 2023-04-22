@@ -24,7 +24,7 @@ publishing {
             name = "GitHubPackages"
             url = "https://maven.pkg.github.com/sibmaks/mad-error-api"
             credentials {
-                username = System.getenv("GIT_USERNAME")
+                username = System.getenv("GIT_ACTOR")
                 password = System.getenv("GIT_TOKEN")
             }
         }
