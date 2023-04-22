@@ -4,7 +4,7 @@ plugins {
 }
 
 group = 'com.github.sibmaks'
-version = '0.0.2'
+version = '0.0.3'
 sourceCompatibility = '17'
 sourceCompatibility = jdk_version
 
