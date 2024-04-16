@@ -1,4 +1,4 @@
-package com.github.sibmaks.error_service.exception;
+package com.github.simple_mocks.error_service.exception;
 
 import jakarta.annotation.Nonnull;
 import jakarta.annotation.Nullable;

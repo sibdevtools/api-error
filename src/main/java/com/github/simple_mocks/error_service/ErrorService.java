@@ -1,7 +1,7 @@
-package com.github.sibmaks.error_service;
+package com.github.simple_mocks.error_service;
 
 
-import com.github.sibmaks.error_service.api.ErrorDescription;
+import com.github.simple_mocks.error_service.api.ErrorDescription;
 import jakarta.annotation.Nonnull;
 
 import java.util.Locale;

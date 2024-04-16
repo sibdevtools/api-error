@@ -1,4 +1,4 @@
-package com.github.sibmaks.error_service.api;
+package com.github.simple_mocks.error_service.api;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

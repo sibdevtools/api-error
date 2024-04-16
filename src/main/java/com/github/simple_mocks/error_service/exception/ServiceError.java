@@ -1,4 +1,4 @@
-package com.github.sibmaks.error_service.exception;
+package com.github.simple_mocks.error_service.exception;
 
 import jakarta.annotation.Nonnull;
 
@@ -16,7 +16,7 @@ public interface ServiceError extends Serializable {
      * System code what cause an error
      *
      * @return system code
-     * @see com.github.sibmaks.error_service.ErrorService
+     * @see com.github.simple_mocks.error_service.ErrorService
      */
     @Nonnull
     String getSystemCode();
@@ -25,7 +25,7 @@ public interface ServiceError extends Serializable {
      * Error code
      *
      * @return error code
-     * @see com.github.sibmaks.error_service.ErrorService
+     * @see com.github.simple_mocks.error_service.ErrorService
      */
     @Nonnull
     String getErrorCode();
