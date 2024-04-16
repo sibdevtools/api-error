@@ -73,7 +73,7 @@ publishing {
             from(components["java"])
             pom {
                 packaging = "jar"
-                url = "https://github.com/simple-mocks/error-api"
+                url = "https://github.com/simple-mocks/api-error"
 
                 licenses {
                     license {
@@ -83,9 +83,9 @@ publishing {
                 }
 
                 scm {
-                    connection.set("scm:https://github.com/simple-mocks/error-api.git")
+                    connection.set("scm:https://github.com/simple-mocks/api-error.git")
                     developerConnection.set("scm:git:ssh://github.com/sib-energy-craft")
-                    url.set("https://github.com/simple-mocks/error-api")
+                    url.set("https://github.com/simple-mocks/api-error")
                 }
 
                 developers {
@@ -110,7 +110,7 @@ publishing {
         }
         maven {
             name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/simple-mocks/error-api")
+            url = uri("https://maven.pkg.github.com/simple-mocks/api-error")
             credentials {
                 username = project.findProperty("gpr.user")?.toString() ?: System.getenv("GITHUB_ACTOR")
                 password = project.findProperty("gpr.key")?.toString() ?: System.getenv("GITHUB_TOKEN")
