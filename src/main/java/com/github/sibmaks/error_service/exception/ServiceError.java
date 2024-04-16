@@ -1,12 +1,16 @@
 package com.github.sibmaks.error_service.exception;
 
+import jakarta.annotation.Nonnull;
+
+import java.io.Serializable;
+
 /**
  * Service error type
  *
  * @author sibmaks
- * @since 2023-04-11
+ * @since 0.0.1
  */
-public interface ServiceError {
+public interface ServiceError extends Serializable {
 
     /**
      * System code what cause an error
@@ -14,6 +18,7 @@ public interface ServiceError {
      * @return system code
      * @see com.github.sibmaks.error_service.ErrorService
      */
+    @Nonnull
     String getSystemCode();
 
     /**
@@ -22,6 +27,7 @@ public interface ServiceError {
      * @return error code
      * @see com.github.sibmaks.error_service.ErrorService
      */
+    @Nonnull
     String getErrorCode();
 
 }

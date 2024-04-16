@@ -1,5 +1,7 @@
 package com.github.sibmaks.error_service.exception;
 
+import jakarta.annotation.Nonnull;
+import jakarta.annotation.Nullable;
 import lombok.Getter;
 
 /**
@@ -7,33 +9,70 @@ import lombok.Getter;
  * Should be thrown when something wrong happened in logically usage of APIs
  *
  * @author sibmaks
- * @since 2023-04-11
+ * @since 0.0.1
  */
+@Getter
 public class ServiceException extends RuntimeException {
-    @Getter
+    private static final int DEFAULT_STATUS = 503;
+
+    /**
+     * Service error status code
+     */
     private final int status;
-    @Getter
+    /**
+     * Service error info
+     */
     private final ServiceError serviceError;
 
-    public ServiceException(ServiceError serviceError, String systemMessage) {
-        super(systemMessage);
-        this.status = 503;
-        this.serviceError = serviceError;
+    /**
+     * Construct exception with default status code {@link #DEFAULT_STATUS}
+     *
+     * @param serviceError  service error info
+     * @param systemMessage system message to log
+     */
+    public ServiceException(@Nonnull ServiceError serviceError,
+                            @Nonnull String systemMessage) {
+        this(DEFAULT_STATUS, serviceError, systemMessage);
     }
 
-    public ServiceException(ServiceError serviceError, String systemMessage, Throwable cause) {
-        super(systemMessage, cause);
-        this.status = 503;
-        this.serviceError = serviceError;
+    /**
+     * Construct exception with default status code {@link #DEFAULT_STATUS} and exception cause
+     *
+     * @param serviceError  service error info
+     * @param systemMessage system message to log
+     * @param cause         service exception cause
+     */
+    public ServiceException(@Nonnull ServiceError serviceError,
+                            @Nonnull String systemMessage,
+                            @Nonnull Throwable cause) {
+        this(DEFAULT_STATUS, serviceError, systemMessage, cause);
     }
 
-    public ServiceException(int status, ServiceError serviceError, String systemMessage) {
-        super(systemMessage);
-        this.status = status;
-        this.serviceError = serviceError;
+    /**
+     * Construct exception with specified status code
+     *
+     * @param status        service error status code
+     * @param serviceError  service error info
+     * @param systemMessage system message to log
+     */
+    public ServiceException(int status,
+                            @Nonnull ServiceError serviceError,
+                            @Nonnull String systemMessage) {
+        this(status, serviceError, systemMessage, null);
     }
 
-    public ServiceException(int status, ServiceError serviceError, String systemMessage, Throwable cause) {
+    /**
+     * Construct exception with specified status code and cause
+     *
+     * @param status        service error status code
+     * @param serviceError  service error info
+     * @param systemMessage system message to log
+     * @param cause         service exception cause
+     */
+    public ServiceException(int status,
+                            @Nonnull ServiceError serviceError,
+                            @Nonnull String systemMessage,
+                            @Nullable Throwable cause) {
         super(systemMessage, cause);
         this.status = status;
         this.serviceError = serviceError;
