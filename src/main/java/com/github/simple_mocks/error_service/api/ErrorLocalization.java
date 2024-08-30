@@ -8,11 +8,11 @@ import lombok.Setter;
 import java.io.Serializable;
 
 /**
- * Error description, contains:<br/>
- * - system code - source of error<br/>
- * - code - unique system error code<br/>
+ * Error localization, contains:<br/>
+ * - source - source of error<br/>
  * - title - user friendly title<br/>
- * - message - user friendly message
+ * - message - user friendly message<br/>
+ * - systemMessage - log friendly message
  *
  * @author sibmaks
  * @since 0.0.1
@@ -21,15 +21,7 @@ import java.io.Serializable;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class ErrorDescription implements Serializable {
-    /**
-     * System code source of error
-     */
-    private String systemCode;
-    /**
-     * Error code
-     */
-    private String code;
+public class ErrorLocalization implements Serializable {
     /**
      * Human-readable title
      */
@@ -38,4 +30,8 @@ public class ErrorDescription implements Serializable {
      * Human-readable message
      */
     private String message;
+    /**
+     * Log-friendly message
+     */
+    private String systemMessage;
 }

@@ -9,26 +9,28 @@ plugins {
 version = "${project.property("version")}"
 group = "${project.property("group")}"
 
+val targetJavaVersion = (project.property("jdk_version") as String).toInt()
+val javaVersion = JavaVersion.toVersion(targetJavaVersion)
+
 java {
-    sourceCompatibility = JavaVersion.VERSION_17
-    targetCompatibility = JavaVersion.VERSION_17
+    sourceCompatibility = javaVersion
+    targetCompatibility = javaVersion
 }
 
 repositories {
     mavenCentral()
-    maven(url = "https://sibmaks.ru/repository/maven-snapshots/")
-    maven(url = "https://sibmaks.ru/repository/maven-releases/")
+    maven(url = "https://nexus.sibmaks.ru/repository/maven-snapshots/")
+    maven(url = "https://nexus.sibmaks.ru/repository/maven-releases/")
 }
 
 dependencies {
-    compileOnly("org.projectlombok", "lombok", "${project.property("lib_lombok_version")}")
-    annotationProcessor("org.projectlombok", "lombok", "${project.property("lib_lombok_version")}")
+    compileOnly("org.projectlombok:lombok:${project.property("lib_lombok_version")}")
+    annotationProcessor("org.projectlombok:lombok:${project.property("lib_lombok_version")}")
 
-    implementation("jakarta.annotation", "jakarta.annotation-api", "${project.property("lib_annotation_api_version")}")
+    implementation("jakarta.annotation:jakarta.annotation-api:${project.property("lib_annotation_api_version")}")
 
 }
 
-val targetJavaVersion = "${project.property("jdk_version")}".toInt()
 tasks.withType<JavaCompile>().configureEach {
     // ensure that the encoding is set to UTF-8, no matter what the system default is
     // this fixes some edge cases with special characters not displaying correctly
@@ -41,7 +43,6 @@ tasks.withType<JavaCompile>().configureEach {
 }
 
 java {
-    val javaVersion = JavaVersion.toVersion(targetJavaVersion)
     if (JavaVersion.current() < javaVersion) {
         toolchain.languageVersion = JavaLanguageVersion.of(targetJavaVersion)
     }
@@ -84,7 +85,7 @@ publishing {
 
                 scm {
                     connection.set("scm:https://github.com/simple-mocks/api-error.git")
-                    developerConnection.set("scm:git:ssh://github.com/sib-energy-craft")
+                    developerConnection.set("scm:git:ssh://github.com/simple-mocks")
                     url.set("https://github.com/simple-mocks/api-error")
                 }
 
@@ -100,8 +101,8 @@ publishing {
     }
     repositories {
         maven {
-            val releasesUrl = uri("https://sibmaks.ru/repository/maven-releases/")
-            val snapshotsUrl = uri("https://sibmaks.ru/repository/maven-snapshots/")
+            val releasesUrl = uri("https://nexus.sibmaks.ru/repository/maven-releases/")
+            val snapshotsUrl = uri("https://nexus.sibmaks.ru/repository/maven-snapshots/")
             url = if (version.toString().endsWith("SNAPSHOT")) snapshotsUrl else releasesUrl
             credentials {
                 username = project.findProperty("nexus_username")?.toString() ?: System.getenv("NEXUS_USERNAME")

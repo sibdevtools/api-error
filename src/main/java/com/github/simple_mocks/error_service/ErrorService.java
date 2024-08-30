@@ -1,7 +1,8 @@
 package com.github.simple_mocks.error_service;
 
 
-import com.github.simple_mocks.error_service.api.ErrorDescription;
+import com.github.simple_mocks.error_service.api.ErrorLocalization;
+import com.github.simple_mocks.error_service.api.ErrorSource;
 import jakarta.annotation.Nonnull;
 
 import java.util.Locale;
@@ -15,16 +16,14 @@ import java.util.Locale;
 public interface ErrorService {
 
     /**
-     * Get error description by system code and error code
+     * Get error description by system code, error code and locale
      *
-     * @param systemCode system code
-     * @param code       error code
-     * @param userLocale user locale
+     * @param errorSource source of error
+     * @param userLocale  user locale
      * @return description of error or null
      */
     @Nonnull
-    ErrorDescription getDescription(@Nonnull String systemCode,
-                                    @Nonnull String code,
-                                    @Nonnull Locale userLocale);
+    ErrorLocalization getDescription(@Nonnull ErrorSource errorSource,
+                                     @Nonnull Locale userLocale);
 
 }
