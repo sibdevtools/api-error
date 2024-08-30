@@ -7,7 +7,7 @@ import lombok.Getter;
 
 /**
  * Common service exception.<br/>
- * Should be thrown when something wrong happened in logically usage of APIs
+ * Should be thrown when something wrong happened in logical usage of APIs
  *
  * @author sibmaks
  * @since 0.0.1
@@ -28,7 +28,7 @@ public class ServiceException extends RuntimeException {
     /**
      * Construct exception with default status code {@link #DEFAULT_STATUS}
      *
-     * @param errorSource  service error info
+     * @param errorSource   service error info
      * @param systemMessage system message to log
      */
     public ServiceException(@Nonnull ErrorSource errorSource,
@@ -39,7 +39,7 @@ public class ServiceException extends RuntimeException {
     /**
      * Construct exception with default status code {@link #DEFAULT_STATUS} and exception cause
      *
-     * @param errorSource  service error info
+     * @param errorSource   service error info
      * @param systemMessage system message to log
      * @param cause         service exception cause
      */
@@ -53,7 +53,7 @@ public class ServiceException extends RuntimeException {
      * Construct exception with specified status code
      *
      * @param status        service error status code
-     * @param errorSource  service error info
+     * @param errorSource   service error info
      * @param systemMessage system message to log
      */
     public ServiceException(int status,
@@ -66,7 +66,7 @@ public class ServiceException extends RuntimeException {
      * Construct exception with specified status code and cause
      *
      * @param status        service error status code
-     * @param errorSource  service error info
+     * @param errorSource   service error info
      * @param systemMessage system message to log
      * @param cause         service exception cause
      */

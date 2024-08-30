@@ -109,13 +109,5 @@ publishing {
                 password = project.findProperty("nexus_password")?.toString() ?: System.getenv("NEXUS_PASSWORD")
             }
         }
-        maven {
-            name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/simple-mocks/api-error")
-            credentials {
-                username = project.findProperty("gpr.user")?.toString() ?: System.getenv("GITHUB_ACTOR")
-                password = project.findProperty("gpr.key")?.toString() ?: System.getenv("GITHUB_TOKEN")
-            }
-        }
     }
 }
