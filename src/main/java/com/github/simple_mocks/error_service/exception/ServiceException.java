@@ -24,6 +24,7 @@ public class ServiceException extends RuntimeException {
      * Service error info
      */
     private final ErrorSource errorSource;
+    private final String code;
 
     /**
      * Construct exception with default status code {@link #DEFAULT_STATUS}
@@ -32,8 +33,9 @@ public class ServiceException extends RuntimeException {
      * @param systemMessage system message to log
      */
     public ServiceException(@Nonnull ErrorSource errorSource,
+                            @Nonnull String code,
                             @Nonnull String systemMessage) {
-        this(DEFAULT_STATUS, errorSource, systemMessage);
+        this(DEFAULT_STATUS, errorSource, code, systemMessage);
     }
 
     /**
@@ -44,9 +46,10 @@ public class ServiceException extends RuntimeException {
      * @param cause         service exception cause
      */
     public ServiceException(@Nonnull ErrorSource errorSource,
+                            @Nonnull String code,
                             @Nonnull String systemMessage,
                             @Nonnull Throwable cause) {
-        this(DEFAULT_STATUS, errorSource, systemMessage, cause);
+        this(DEFAULT_STATUS, errorSource, code, systemMessage, cause);
     }
 
     /**
@@ -58,8 +61,9 @@ public class ServiceException extends RuntimeException {
      */
     public ServiceException(int status,
                             @Nonnull ErrorSource errorSource,
+                            @Nonnull String code,
                             @Nonnull String systemMessage) {
-        this(status, errorSource, systemMessage, null);
+        this(status, errorSource, code, systemMessage, null);
     }
 
     /**
@@ -72,10 +76,12 @@ public class ServiceException extends RuntimeException {
      */
     public ServiceException(int status,
                             @Nonnull ErrorSource errorSource,
+                            @Nonnull String code,
                             @Nonnull String systemMessage,
                             @Nullable Throwable cause) {
         super(systemMessage, cause);
         this.status = status;
         this.errorSource = errorSource;
+        this.code = code;
     }
 }

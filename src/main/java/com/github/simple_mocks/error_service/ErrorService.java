@@ -18,12 +18,14 @@ public interface ErrorService {
     /**
      * Get error description by system code, error code and locale
      *
-     * @param errorSource source of error
+     * @param errorSource source of error localization
+     * @param errorCode   error code
      * @param userLocale  user locale
      * @return description of error or null
      */
     @Nonnull
-    ErrorLocalization getDescription(@Nonnull ErrorSource errorSource,
-                                     @Nonnull Locale userLocale);
+    ErrorLocalization localize(@Nonnull ErrorSource errorSource,
+                               @Nonnull String errorCode,
+                               @Nonnull Locale userLocale);
 
 }
