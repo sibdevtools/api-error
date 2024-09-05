@@ -1,4 +1,4 @@
-package com.github.simple_mocks.error_service;
+package com.github.simple_mocks.error_service.api.service;
 
 
 import com.github.simple_mocks.error_service.api.ErrorLocalization;
