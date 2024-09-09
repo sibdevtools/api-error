@@ -17,13 +17,27 @@ import java.io.Serializable;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class ErrorSource implements Serializable {
+public class ErrorSourceId implements Serializable {
+    /**
+     * Default kind code
+     */
     public static final String DEFAULT_KIND_CODE = "SERVICE_STANDARD_ERRORS";
 
+    /**
+     * System code
+     */
     private String systemCode;
+    /**
+     * Kind code, can be used to clarify error source
+     */
     private String kindCode = DEFAULT_KIND_CODE;
 
-    public ErrorSource(String systemCode) {
+    /**
+     * Construct error source code from system
+     *
+     * @param systemCode system code
+     */
+    public ErrorSourceId(String systemCode) {
         this.systemCode = systemCode;
     }
 }

@@ -5,13 +5,13 @@ import jakarta.annotation.Nonnull;
 /**
  * Error localization identity
  *
- * @param source error localization source
- * @param code   error code
+ * @param sourceId error localization source identity
+ * @param code     error code
  * @author sibmaks
  * @since 0.0.2
  */
 public record ErrorLocalizationId(
-        @Nonnull ErrorSource source,
+        @Nonnull ErrorSourceId sourceId,
         @Nonnull String code
 ) {
 }

@@ -14,7 +14,7 @@ import jakarta.annotation.Nonnull;
 public interface ErrorService {
 
     /**
-     * Get error description by system code, error code and locale
+     * Get error localization by system code, error code and locale
      *
      * @param rq request for localization
      * @return description of error or null

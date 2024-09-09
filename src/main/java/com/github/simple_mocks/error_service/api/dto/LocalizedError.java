@@ -8,7 +8,7 @@ import lombok.Setter;
 import java.io.Serializable;
 
 /**
- * Error localization
+ * Localized error dto
  *
  * @author sibmaks
  * @since 0.0.1
@@ -17,7 +17,7 @@ import java.io.Serializable;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class LocalizedError implements Serializable {
+public class LocalizedError {
     /**
      * Human-readable title
      */

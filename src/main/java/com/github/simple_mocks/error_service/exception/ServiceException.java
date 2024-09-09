@@ -1,6 +1,6 @@
 package com.github.simple_mocks.error_service.exception;
 
-import com.github.simple_mocks.error_service.api.dto.ErrorSource;
+import com.github.simple_mocks.error_service.api.dto.ErrorSourceId;
 import jakarta.annotation.Nonnull;
 import jakarta.annotation.Nullable;
 import lombok.Getter;
@@ -23,65 +23,72 @@ public class ServiceException extends RuntimeException {
     /**
      * Service error info
      */
-    private final ErrorSource errorSource;
+    private final ErrorSourceId sourceId;
+    /**
+     * Service error localization code
+     */
     private final String code;
 
     /**
      * Construct exception with default status code {@link #DEFAULT_STATUS}
      *
-     * @param errorSource   service error info
+     * @param sourceId      error source identity
+     * @param code          service error code
      * @param systemMessage system message to log
      */
-    public ServiceException(@Nonnull ErrorSource errorSource,
+    public ServiceException(@Nonnull ErrorSourceId sourceId,
                             @Nonnull String code,
                             @Nonnull String systemMessage) {
-        this(DEFAULT_STATUS, errorSource, code, systemMessage);
+        this(DEFAULT_STATUS, sourceId, code, systemMessage);
     }
 
     /**
      * Construct exception with default status code {@link #DEFAULT_STATUS} and exception cause
      *
-     * @param errorSource   service error info
+     * @param sourceId      error source identity
+     * @param code          service error code
      * @param systemMessage system message to log
      * @param cause         service exception cause
      */
-    public ServiceException(@Nonnull ErrorSource errorSource,
+    public ServiceException(@Nonnull ErrorSourceId sourceId,
                             @Nonnull String code,
                             @Nonnull String systemMessage,
                             @Nonnull Throwable cause) {
-        this(DEFAULT_STATUS, errorSource, code, systemMessage, cause);
+        this(DEFAULT_STATUS, sourceId, code, systemMessage, cause);
     }
 
     /**
      * Construct exception with specified status code
      *
      * @param status        service error status code
-     * @param errorSource   service error info
+     * @param sourceId      error source identity
+     * @param code          service error code
      * @param systemMessage system message to log
      */
     public ServiceException(int status,
-                            @Nonnull ErrorSource errorSource,
+                            @Nonnull ErrorSourceId sourceId,
                             @Nonnull String code,
                             @Nonnull String systemMessage) {
-        this(status, errorSource, code, systemMessage, null);
+        this(status, sourceId, code, systemMessage, null);
     }
 
     /**
      * Construct exception with specified status code and cause
      *
      * @param status        service error status code
-     * @param errorSource   service error info
+     * @param sourceId      error source identity
+     * @param code          service error code
      * @param systemMessage system message to log
      * @param cause         service exception cause
      */
     public ServiceException(int status,
-                            @Nonnull ErrorSource errorSource,
+                            @Nonnull ErrorSourceId sourceId,
                             @Nonnull String code,
                             @Nonnull String systemMessage,
                             @Nullable Throwable cause) {
         super(systemMessage, cause);
         this.status = status;
-        this.errorSource = errorSource;
+        this.sourceId = sourceId;
         this.code = code;
     }
 }

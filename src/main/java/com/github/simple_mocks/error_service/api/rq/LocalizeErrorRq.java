@@ -6,6 +6,10 @@ import jakarta.annotation.Nonnull;
 import java.util.Locale;
 
 /**
+ * Localize error request
+ *
+ * @param errorLocalizationId localization error identity
+ * @param userLocale          user locale
  * @author sibmaks
  * @since 0.0.11
  */

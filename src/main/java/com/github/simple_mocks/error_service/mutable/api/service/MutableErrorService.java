@@ -5,6 +5,8 @@ import com.github.simple_mocks.error_service.mutable.api.rq.DeleteLocalizationsR
 import jakarta.annotation.Nonnull;
 
 /**
+ * Interface provide ability to change error service state
+ *
  * @author sibmaks
  * @since 0.0.10
  */
