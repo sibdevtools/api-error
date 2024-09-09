@@ -1,4 +1,4 @@
-package com.github.simple_mocks.error_service.api;
+package com.github.simple_mocks.error_service.api.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -8,11 +8,7 @@ import lombok.Setter;
 import java.io.Serializable;
 
 /**
- * Error localization, contains:<br/>
- * - source - source of error<br/>
- * - title - user friendly title<br/>
- * - message - user friendly message<br/>
- * - systemMessage - log friendly message
+ * Error localization
  *
  * @author sibmaks
  * @since 0.0.1
@@ -21,7 +17,7 @@ import java.io.Serializable;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class ErrorLocalization implements Serializable {
+public class LocalizedError implements Serializable {
     /**
      * Human-readable title
      */

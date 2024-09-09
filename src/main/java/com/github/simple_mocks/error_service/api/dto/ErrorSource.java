@@ -1,4 +1,4 @@
-package com.github.simple_mocks.error_service.api;
+package com.github.simple_mocks.error_service.api.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

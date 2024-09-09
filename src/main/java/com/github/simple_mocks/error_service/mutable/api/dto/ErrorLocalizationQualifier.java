@@ -8,6 +8,6 @@ import java.util.Locale;
  * @author sibmaks
  * @since 0.0.10
  */
-public record ErrorLocalizationKey(@Nonnull String errorCode,
-                                   @Nonnull Locale userLocale) {
+public record ErrorLocalizationQualifier(@Nonnull String errorCode,
+                                         @Nonnull Locale userLocale) {
 }

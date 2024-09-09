@@ -1,11 +1,9 @@
 package com.github.simple_mocks.error_service.api.service;
 
 
-import com.github.simple_mocks.error_service.api.ErrorLocalization;
-import com.github.simple_mocks.error_service.api.ErrorSource;
+import com.github.simple_mocks.error_service.api.dto.LocalizedError;
+import com.github.simple_mocks.error_service.api.rq.LocalizeErrorRq;
 import jakarta.annotation.Nonnull;
-
-import java.util.Locale;
 
 /**
  * Error service - service for get error description by system code and error core
@@ -18,14 +16,10 @@ public interface ErrorService {
     /**
      * Get error description by system code, error code and locale
      *
-     * @param errorSource source of error localization
-     * @param errorCode   error code
-     * @param userLocale  user locale
+     * @param rq request for localization
      * @return description of error or null
      */
     @Nonnull
-    ErrorLocalization localize(@Nonnull ErrorSource errorSource,
-                               @Nonnull String errorCode,
-                               @Nonnull Locale userLocale);
+    LocalizedError localize(@Nonnull LocalizeErrorRq rq);
 
 }
