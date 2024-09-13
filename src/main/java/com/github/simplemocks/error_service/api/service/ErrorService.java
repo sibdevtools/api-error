@@ -1,8 +1,8 @@
 package com.github.simplemocks.error_service.api.service;
 
 
-import com.github.simplemocks.error_service.api.dto.LocalizedError;
 import com.github.simplemocks.error_service.api.rq.LocalizeErrorRq;
+import com.github.simplemocks.error_service.api.rs.LocalizeErrorRs;
 import jakarta.annotation.Nonnull;
 
 /**
@@ -20,6 +20,6 @@ public interface ErrorService {
      * @return description of error or null
      */
     @Nonnull
-    LocalizedError localize(@Nonnull LocalizeErrorRq rq);
+    LocalizeErrorRs localize(@Nonnull LocalizeErrorRq rq);
 
 }
