@@ -1,9 +1,9 @@
 package com.github.simplemocks.error_service.api.rs;
 
+import com.github.simplemocks.common.api.dto.ErrorRsDto;
 import com.github.simplemocks.common.api.rs.StandardBodyRs;
 import com.github.simplemocks.error_service.api.dto.LocalizedError;
 import jakarta.annotation.Nullable;
-import lombok.Builder;
 
 /**
  * Localize error response dto
@@ -11,7 +11,6 @@ import lombok.Builder;
  * @author sibmaks
  * @since 0.0.1
  */
-@Builder
 public class LocalizeErrorRs extends StandardBodyRs<LocalizedError> {
 
     /**
@@ -21,6 +20,15 @@ public class LocalizeErrorRs extends StandardBodyRs<LocalizedError> {
      */
     public LocalizeErrorRs(@Nullable LocalizedError localizedError) {
         super(localizedError);
+    }
+
+    /**
+     * Construct localize error response with error
+     *
+     * @param error happened error
+     */
+    public LocalizeErrorRs(ErrorRsDto error) {
+        super(error);
     }
 
 }
