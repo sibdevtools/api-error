@@ -1,7 +1,7 @@
-package com.github.simple_mocks.error_service.mutable.api.service;
+package com.github.simplemocks.error_service.mutable.api.service;
 
-import com.github.simple_mocks.error_service.mutable.api.rq.AddLocalizationsRq;
-import com.github.simple_mocks.error_service.mutable.api.rq.DeleteLocalizationsRq;
+import com.github.simplemocks.error_service.mutable.api.rq.AddLocalizationsRq;
+import com.github.simplemocks.error_service.mutable.api.rq.DeleteLocalizationsRq;
 import jakarta.annotation.Nonnull;
 
 /**

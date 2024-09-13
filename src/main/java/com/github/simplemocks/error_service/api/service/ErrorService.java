@@ -1,8 +1,8 @@
-package com.github.simple_mocks.error_service.api.service;
+package com.github.simplemocks.error_service.api.service;
 
 
-import com.github.simple_mocks.error_service.api.dto.LocalizedError;
-import com.github.simple_mocks.error_service.api.rq.LocalizeErrorRq;
+import com.github.simplemocks.error_service.api.dto.LocalizedError;
+import com.github.simplemocks.error_service.api.rq.LocalizeErrorRq;
 import jakarta.annotation.Nonnull;
 
 /**

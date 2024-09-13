@@ -1,6 +1,6 @@
-package com.github.simple_mocks.error_service.exception;
+package com.github.simplemocks.error_service.exception;
 
-import com.github.simple_mocks.error_service.api.dto.ErrorSourceId;
+import com.github.simplemocks.error_service.api.dto.ErrorSourceId;
 import jakarta.annotation.Nonnull;
 import jakarta.annotation.Nullable;
 import lombok.Getter;

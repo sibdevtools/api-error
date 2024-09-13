@@ -1,11 +1,9 @@
-package com.github.simple_mocks.error_service.api.dto;
+package com.github.simplemocks.error_service.api.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import java.io.Serializable;
 
 /**
  * Localized error dto
