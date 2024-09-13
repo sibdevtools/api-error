@@ -26,8 +26,4 @@ public class LocalizedError implements Serializable {
      * Human-readable message
      */
     private String message;
-    /**
-     * Log-friendly message
-     */
-    private String systemMessage;
 }
