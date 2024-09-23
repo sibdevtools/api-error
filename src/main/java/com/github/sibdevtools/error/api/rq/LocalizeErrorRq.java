@@ -1,6 +1,6 @@
-package com.github.simplemocks.error_service.api.rq;
+package com.github.sibdevtools.error.api.rq;
 
-import com.github.simplemocks.error_service.api.dto.ErrorLocalizationId;
+import com.github.sibdevtools.error.api.dto.ErrorLocalizationId;
 import jakarta.annotation.Nonnull;
 
 import java.util.Locale;

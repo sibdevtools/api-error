@@ -1,7 +1,7 @@
-package com.github.simplemocks.error_service.mutable.api.rq;
+package com.github.sibdevtools.error.mutable.api.rq;
 
-import com.github.simplemocks.error_service.api.dto.ErrorSourceId;
-import com.github.simplemocks.error_service.mutable.api.dto.ErrorLocalizationKey;
+import com.github.sibdevtools.error.api.dto.ErrorSourceId;
+import com.github.sibdevtools.error.mutable.api.dto.ErrorLocalizationKey;
 import jakarta.annotation.Nonnull;
 
 import java.util.Set;

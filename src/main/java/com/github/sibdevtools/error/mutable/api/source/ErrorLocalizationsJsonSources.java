@@ -1,4 +1,4 @@
-package com.github.simplemocks.error_service.mutable.api.source;
+package com.github.sibdevtools.error.mutable.api.source;
 
 import java.lang.annotation.*;
 

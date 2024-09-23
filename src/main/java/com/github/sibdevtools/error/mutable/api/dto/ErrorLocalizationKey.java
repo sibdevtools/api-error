@@ -1,4 +1,4 @@
-package com.github.simplemocks.error_service.mutable.api.dto;
+package com.github.sibdevtools.error.mutable.api.dto;
 
 import jakarta.annotation.Nonnull;
 

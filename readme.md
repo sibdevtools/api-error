@@ -1,4 +1,4 @@
-# Simple Mock - Error API
+# SibDevTools - Error API
 
 ## To build
 

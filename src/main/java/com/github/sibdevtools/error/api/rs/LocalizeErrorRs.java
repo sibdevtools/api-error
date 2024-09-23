@@ -1,8 +1,8 @@
-package com.github.simplemocks.error_service.api.rs;
+package com.github.sibdevtools.error.api.rs;
 
-import com.github.simplemocks.common.api.dto.ErrorRsDto;
-import com.github.simplemocks.common.api.rs.StandardBodyRs;
-import com.github.simplemocks.error_service.api.dto.LocalizedError;
+import com.github.sibdevtools.error.api.dto.LocalizedError;
+import com.github.sibdevtools.common.api.dto.ErrorRsDto;
+import com.github.sibdevtools.common.api.rs.StandardBodyRs;
 import jakarta.annotation.Nullable;
 
 /**

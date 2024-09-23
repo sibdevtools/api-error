@@ -1,6 +1,6 @@
-package com.github.simplemocks.error_service.mutable.api.source;
+package com.github.sibdevtools.error.mutable.api.source;
 
-import com.github.simplemocks.error_service.api.dto.ErrorSourceId;
+import com.github.sibdevtools.error.api.dto.ErrorSourceId;
 
 import java.lang.annotation.*;
 
