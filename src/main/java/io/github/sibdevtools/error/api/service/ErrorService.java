@@ -1,8 +1,8 @@
-package com.github.sibdevtools.error.api.service;
+package io.github.sibdevtools.error.api.service;
 
 
-import com.github.sibdevtools.error.api.rq.LocalizeErrorRq;
-import com.github.sibdevtools.error.api.rs.LocalizeErrorRs;
+import io.github.sibdevtools.error.api.rq.LocalizeErrorRq;
+import io.github.sibdevtools.error.api.rs.LocalizeErrorRs;
 import jakarta.annotation.Nonnull;
 
 /**

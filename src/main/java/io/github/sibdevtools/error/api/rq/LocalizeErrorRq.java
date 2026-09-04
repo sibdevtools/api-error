@@ -1,6 +1,6 @@
-package com.github.sibdevtools.error.api.rq;
+package io.github.sibdevtools.error.api.rq;
 
-import com.github.sibdevtools.error.api.dto.ErrorLocalizationId;
+import io.github.sibdevtools.error.api.dto.ErrorLocalizationId;
 import jakarta.annotation.Nonnull;
 
 import java.util.Locale;

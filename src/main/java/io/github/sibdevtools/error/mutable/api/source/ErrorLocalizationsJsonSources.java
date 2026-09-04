@@ -1,4 +1,4 @@
-package com.github.sibdevtools.error.mutable.api.source;
+package io.github.sibdevtools.error.mutable.api.source;
 
 import java.lang.annotation.*;
 

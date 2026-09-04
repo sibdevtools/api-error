@@ -1,6 +1,6 @@
-package com.github.sibdevtools.error.exception;
+package io.github.sibdevtools.error.exception;
 
-import com.github.sibdevtools.error.api.dto.ErrorSourceId;
+import io.github.sibdevtools.error.api.dto.ErrorSourceId;
 import jakarta.annotation.Nonnull;
 import jakarta.annotation.Nullable;
 import lombok.Getter;

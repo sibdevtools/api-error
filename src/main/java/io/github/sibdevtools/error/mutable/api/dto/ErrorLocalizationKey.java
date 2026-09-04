@@ -1,4 +1,4 @@
-package com.github.sibdevtools.error.mutable.api.dto;
+package io.github.sibdevtools.error.mutable.api.dto;
 
 import jakarta.annotation.Nonnull;
 

@@ -1,6 +1,6 @@
-package com.github.sibdevtools.error.mutable.api.source;
+package io.github.sibdevtools.error.mutable.api.source;
 
-import com.github.sibdevtools.error.api.dto.ErrorSourceId;
+import io.github.sibdevtools.error.api.dto.ErrorSourceId;
 
 import java.lang.annotation.*;
 

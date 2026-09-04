@@ -1,8 +1,8 @@
-package com.github.sibdevtools.error.mutable.api.rq;
+package io.github.sibdevtools.error.mutable.api.rq;
 
-import com.github.sibdevtools.error.api.dto.ErrorSourceId;
-import com.github.sibdevtools.error.mutable.api.dto.ErrorLocalizationKey;
-import com.github.sibdevtools.error.api.dto.LocalizedError;
+import io.github.sibdevtools.error.api.dto.ErrorSourceId;
+import io.github.sibdevtools.error.mutable.api.dto.ErrorLocalizationKey;
+import io.github.sibdevtools.error.api.dto.LocalizedError;
 import jakarta.annotation.Nonnull;
 
 import java.util.Map;
