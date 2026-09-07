@@ -14,7 +14,7 @@ val versionFromEnv: String? = System.getenv("VERSION")
 
 version = versionFromEnv ?: versionFromProperty
 group = "${project.property("group")}"
-description = "SibDevTools common project API"
+description = "SibDevTools error project API"
 
 val targetJavaVersion = (project.property("jdk_version") as String).toInt()
 val javaVersion = JavaVersion.toVersion(targetJavaVersion)
